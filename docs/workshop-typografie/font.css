@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'Pixelfont';
-    src: url('PixelFont-Regular.otf') format('otf');
-}
-body {
-    font-family: 'Pixelfont';
-    font-size: 16px;
-    line-height: 1.4;
-}
