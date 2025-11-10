@@ -18,10 +18,11 @@
   --background-main: white;
   --background-sticky-elements: #224455;
   --background-list-items: #EEEEEE;
+  --background-darker: #061F2C;
   --text-color-light: #224455;
   --text-color-dark: white;
-  --active-svg: #29ff50;
-  --active-link: rgba(41, 255, 80, 1);
+  --active-svg: #12a62d;
+  --active-link: #12a62d;
 
   /* font-sizes */
   --font-size-labels: .7rem;
@@ -562,6 +563,10 @@ footer {
     svg {
       width: 25px;
       height: auto;
+
+      path {
+        fill: var(--text-color-dark)
+      }
     }
 
     li.back-button {
@@ -576,7 +581,11 @@ footer {
 
 .detail-page {
 
-  article {
+  margin-bottom: 20vh;
+  justify-content: center;
+  align-items: center;    
+
+  .snappmap-indicator {
     margin: 20px;
     display: flex;
     place-self: start;
@@ -586,18 +595,21 @@ footer {
     svg {
       width: 20px;
       height: auto;
+      
+      path {
+        fill: var(--text-color-light);
+      }
     }
 
     h3 { 
-      color: var(--text-color-dark);
+      color: var(--text-color-light);
     }
   }
 
   img {
-    display: flex;
-    width: 90vw;
+    width: 100vw;
 
-    @media (min-width: 498px) {
+    @media (min-width: 598px) {
       width: 60%;
       height: auto;
     }
@@ -607,9 +619,9 @@ footer {
     display: flex;
     place-self: center;
     flex-direction: column;
-    width: 90vw;
+    width: 100vw;
         
-    @media (min-width: 498px) {
+    @media (min-width: 598px) {
       flex-direction: row;
       gap: 20px;
     }
@@ -617,18 +629,54 @@ footer {
 
   figcaption {
     display: flex;
+    justify-content: space-around;
     gap: 20px;
     margin-top: 20px;
-    height: 20%;
+    width: 95vw;
 
-    @media (min-width: 498px) {
+    @media (min-width: 598px) {
       flex-direction: column;
     }
 
     p {
-      font-size: .8rem;
+      font-size: var(--font-size-body);
+      border-radius: var(--border-radius);
       background-color: var(--active-link);
       padding: 10px 20px;
+      color: var(--text-color-dark)
+    }
+  }
+  .more-from {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+    .more-location {
+      
+      flex-direction: column;
+      background-color: var(--background-sticky-elements);
+      color: var(--text-color-dark);
+      width: 90vw;
+      padding: 0px 5vw 5vw 5vw;
+
+
+      h3 {
+        color: var(--text-color-light);
+        background-color: var(--background-main);
+        width: 60vw;
+        height: 5vh;
+        border-radius: 0px 0px 20px 20px;
+        text-align: center;
+      }
+
+      a { 
+        color: var(--text-color-dark);
+      }
+
+      ul {
+        flex-direction: row;
+      }
     }
   }
 }
