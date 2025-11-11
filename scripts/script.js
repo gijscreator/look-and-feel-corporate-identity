@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
     { src: "assets/stoplicht.jpg", alt: "Stoplicht", name: "Hugo Peters", place: "Groningen", snappmap: "Mooi" }
   ];
 
-  // ------------------------------------------------Code gemaakt door ai alleen voor voor voorbeeld display van de detailpagina
+  // ------------------------------------------------
 
-  // Get elements from dom
+  // Get elements from DOM
   const button = document.querySelector(".grid-list-toggle");
   const gallery = document.querySelector("article.images ul");
   const bigImage = document.getElementById("detail-image");
@@ -39,7 +39,33 @@ document.addEventListener("DOMContentLoaded", () => {
       const spot = document.querySelector(".detail-card") || document.querySelector("figure");
       if (spot) spot.insertAdjacentHTML("beforeend", "<p>Sorry, picture not found.</p>");
     }
-    return;
+
+    // ✅ Add like/dislike/favorite here so it runs on the detail page
+    const likeBtn = document.querySelector(".like-button");
+    const dislikeBtn = document.querySelector(".dislike-button");
+    const favBtn = document.querySelector(".favorite-button");
+
+    if (likeBtn && dislikeBtn && favBtn) {
+      likeBtn.addEventListener("click", () => {
+        likeBtn.classList.toggle("liked");
+        dislikeBtn.classList.remove("disliked");
+        favBtn.classList.remove("favorited");
+      });
+
+      dislikeBtn.addEventListener("click", () => {
+        dislikeBtn.classList.toggle("disliked");
+        likeBtn.classList.remove("liked");
+        favBtn.classList.remove("favorited");
+      });
+
+      favBtn.addEventListener("click", () => {
+        favBtn.classList.toggle("favorited");
+        likeBtn.classList.remove("liked");
+        dislikeBtn.classList.remove("disliked");
+      });
+    }
+
+    return; // keep this so gallery code below doesn’t run
   }
 
   // If no gallery, stop
@@ -77,10 +103,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// tot hier door ai 
-
-// Camera input voor mobiel de camera en desktop de file browser
-document.getElementById("cameraInput").addEventListener("change", event => {
-  const file = event.target.files[0];
-  if (file) console.log("You took a picture!", file);
-});
+// Camera input for mobile/desktop
+const cameraInput = document.getElementById("cameraInput");
+if (cameraInput) {
+  cameraInput.addEventListener("change", event => {
+    const file = event.target.files[0];
+    if (file) console.log("You took a picture!", file);
+  });
+}

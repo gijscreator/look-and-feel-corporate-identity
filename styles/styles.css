@@ -669,6 +669,7 @@ footer {
       color: var(--text-color-dark)
     }
   }
+
   .more-from {
     display: flex;
     justify-content: center;
@@ -702,8 +703,24 @@ footer {
       }
     }
   }
+
+  button {
+    all: unset;
+    cursor: pointer;
+  }
 }
 
+.liked svg {
+  filter: brightness(0) saturate(100%) invert(62%) sepia(81%) saturate(412%) hue-rotate(74deg) brightness(92%) contrast(94%);
+}
+
+.disliked svg {
+  filter: brightness(0) saturate(100%) invert(48%) sepia(84%) saturate(540%) hue-rotate(326deg) brightness(94%) contrast(92%);
+}
+
+.favorited svg {
+  filter: brightness(0) saturate(100%) invert(84%) sepia(67%) saturate(501%) hue-rotate(4deg) brightness(104%) contrast(103%);
+}
 /* ---------------------------------Groepspagina-----------------------------------*/
 
 /* Groepspagina header */ 
