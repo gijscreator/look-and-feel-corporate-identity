@@ -615,6 +615,23 @@ footer {
     }
   }
 
+  .detail-wrapper {
+    position: relative;
+  }
+
+  .like-section {
+    position: absolute;
+    top: 50%;
+    right: 3vw;
+    transform: translate(10%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--background-main);
+  }
+
   figure {
     display: flex;
     place-self: center;
