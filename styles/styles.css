@@ -636,13 +636,17 @@ footer {
     flex-direction: column;
     gap: 3vh;
     padding: 1rem;
-    background: var(--background-sticky-elements);
+    background-color: var(--background-main) ;
     border-radius:25px;
-    color: var(--background-main);
+    color: var(--text-color-light);
 
       svg {
         width: 1.5rem;
         height: auto;
+
+        path {
+          fill: var(--background-sticky-elements)
+        }
       }
   }
 
