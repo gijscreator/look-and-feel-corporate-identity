@@ -1,45 +1,3 @@
-/* font family van de opdrachtgever */ 
-  @font-face {
-    font-family: 'Bariol';
-      src: url('../assets/Bariol_Bold.otf') format('opentype');
-  }
-    @font-face {
-    font-family: 'Bariol-reg';
-      src: url('../assets/Bariol_Regular.otf') format('opentype');
-  }
-
-:root {
-
-  /* Fonts */
-  --main-font: 'Bariol';
-  --reg-font: 'Bariol-reg';
-
-  /* Colors */
-  --background-main: white;
-  --background-sticky-elements: #224455;
-  --background-list-items: #EEEEEE;
-  --background-darker: #061F2C;
-  --text-color-light: #224455;
-  --text-color-dark: white;
-  --active-svg: #12a62d;
-  --active-link: #12a62d;
-  --active-favorite: yellow;
-  --active-tomato: red;
-
-  /* font-sizes */
-  --font-size-labels: .7rem;
-  --font-size-headings: 1.5rem;
-  --font-size-body: 1rem;
-
-  /* Borders */
-  --border-radius: 20px;
-  
-  /* Sizes */
-  --icon-width: 25px;
-
-}
-
-
 /* ---------------------------------General styling-----------------------------------*/
 
 *,
@@ -48,18 +6,18 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: var(--main-font);
+  font-family: var(--font-family);
 }
 
 html {
-  background-color: var(--background-main);
-  color: var(--text-color-light)
+  background-color: var(--white);
+  color: var(--nav-neutral)
   
 }
 
 header, footer {
-  background-color: var(--background-sticky-elements);
-  color: var(--text-color-dark);
+  background-color: var(--nav-neutral);
+  color: var(--white);
 }
 
 figure {
@@ -91,7 +49,7 @@ img {
 }
 
 path, svg {
-  fill: var(--text-color-dark);
+  fill: var(--white);
 }
 
 .sr-only {
@@ -186,7 +144,7 @@ header  {
 
   a,
   h4 {
-    color: var(--text-color-dark);
+    color: var(--white);
   }
 
   .header-text-icon {
@@ -199,7 +157,7 @@ header  {
   /* Summery detail element general styles */
 
 details {
-  font-size: var(--font-size-headings);
+  font-size: var(--font-size-small);
   text-decoration: underline;
 }
 
@@ -207,7 +165,7 @@ details {
     position: sticky;
     display: flex;
     flex-direction: column;
-    background-color: var(--background-main);
+    background-color: var(--nav-neutral);
     padding: 1rem;
     gap: 10px;
     justify-content: left;
@@ -218,7 +176,7 @@ details {
     }
 
     .list-all-snaps {
-      font-size: var(--font-size-body);
+      font-size: var(--font-size-paragraph);
     }
 
     li > button {
@@ -231,6 +189,7 @@ details {
       text-decoration: none;
       border: none;
       background-color: transparent;
+      color: var(--white)
     }
 
     a {
@@ -240,7 +199,7 @@ details {
     }
 
     svg > path {
-      fill: var(--text-color-light)
+      fill: var(--white)
     }
   }
 
@@ -257,8 +216,8 @@ details {
 
   .snappmap-list-header details[open] > *:not(summary) {
     align-items: center;
-    color: var(--text-color-dark);
-    background-color: var(--background-sticky-elements);
+    color: var(--white);
+    background-color: var(--nav-neutral);
   }
 
   /* issue voor safari gefixt */
@@ -287,8 +246,8 @@ details {
 
   input {
     display: none;
-    border: 3px #224455 solid;
-    color: var(--text-color-light);
+    border: 3px var(--nav-neutral) solid;
+    color: var(--white);
     width: 80vw;
     max-width: 20vw;
     border-radius: 50px;
@@ -303,7 +262,7 @@ details {
     &::placeholder {
       font-size: .8rem;
       padding-left: 10%;
-      color: var(--text-color-light);
+      color: var(--white);
     }
 
     &::-webkit-textfield-decoration-container {
@@ -337,7 +296,7 @@ details {
     }
 
     path {
-      fill: var(--text-color-light);
+      fill: var(--nav-neutral);
     }
   }
 
@@ -402,7 +361,7 @@ ul.images-list {
     grid-template-columns: 39vw 1fr;        
     column-gap: 16px;
     align-items: center;
-    background: var(--background-list-items);
+    background: var(--primary-bg-lightest);
     height: 10vh;
 
     img {
@@ -419,7 +378,7 @@ ul.images-list {
       gap: 10px;
 
       p {   
-        color: var(--text-color-light);
+        color: var(--nav-neutral);
         font-size: 1.1rem;
       }
     }
@@ -441,18 +400,18 @@ ul.images-list {
     }
 
     figure *:not(img) {
-      color: var(--text-color-light);
+      color: var(--nav-neutral);
     }
   
     h4 {
-      color: var(--text-color-light);
+      color: var(--nav-neutral);
     }
   }
 }
 
 /* Footer */
 footer {
-  background-color: var(--background-sticky-elements);
+  background-color: var(--nav-neutral);
   position: fixed;
   bottom: 0;
   left: 0;
@@ -490,11 +449,11 @@ footer {
         }
 
         svg.active > path {
-          fill: var(--active-svg);
+          fill: var(--accent-neutral);
         }
         
         p {
-          color: var(--text-color-dark);
+          color: var(--white);
           font-size: .9rem;
           text-align: center;
         }
@@ -787,12 +746,12 @@ fill: var(--active-tomato);
     display: flex;
     justify-content: space-between;
     width: 100%;
-    border-bottom: solid var(--text-color-light) 2px;
+    border-bottom: solid var(--nav-neutral) 2px;
     padding: 10px;
     gap: 2vw;
 
     svg path {   
-      fill: var(--text-color-light);
+      fill: var(--nav-neutral);
     }
 
     svg {
@@ -809,21 +768,19 @@ fill: var(--active-tomato);
       flex-direction: column;
       
       h4 {
-        color:var(--text-color-light);
+        color:var(--nav-neutral);
         font-size: 1.5rem;
       }
 
       p {
-        color:var(--text-color-light);
+        color:var(--nav-neutral);
         font-size: 1.2rem;
-        font-family: var(--reg-font)
       }
       .active {
-        background-color: var(--background-sticky-elements);
-        color: var(--text-color-dark);
+        background-color: var(--nav-neutral);
+        color: var(--white);
         padding: 5px 10px;
         border-radius: 5px;
-        font-family: var(--main-font);
       }
     }
     
@@ -831,7 +788,7 @@ fill: var(--active-tomato);
       flex-direction: row;
 
       li {
-        border-bottom: none white 1px;
+        border-bottom: none var(--nav-neutral) 1px;
       }
     }
   }
@@ -865,7 +822,7 @@ fill: var(--active-tomato);
     }
 
     path {
-      fill: var(--text-color-dark);
+      fill: var(--white);
     }
   
   a {
@@ -875,7 +832,7 @@ fill: var(--active-tomato);
   }
   
   p {
-    color: var(--text-color-dark);
+    color: var(--white);
     font-size: 1rem;
     font-weight: 600;
     text-align: center;
@@ -911,7 +868,8 @@ fill: var(--active-tomato);
     }
     
     p {
-      background-color: var(--active-svg);
+      background-color: var(--accent-neutral);
+      color: var(--white);
       padding: 10% 20%;
       border-radius: 20px;
     }
@@ -946,11 +904,11 @@ fill: var(--active-tomato);
 
     a {
       text-decoration: none;
-      color: var(--text-color-light);
+      color: var(--nav-neutral);
     }
 
     path {
-      fill: var(--text-color-light);
+      fill: var(--nav-neutral);
     }
   }
 
@@ -965,7 +923,7 @@ fill: var(--active-tomato);
   .snappmap-heading {
     width: 100vw;
     height:5vh;
-    background-color: var(--background-main);
+    background-color: var(--nav-neutral);
     display: flex;
     justify-content: center;
   }
@@ -984,11 +942,12 @@ fill: var(--active-tomato);
     }
 
     p {
-      color: var(--text-color-dark);
+      color: var(--white);
     }
 
     h2 {
-      color:var(--text-color-light);
+      color:var(--white);
+      font-size: var(--font-size-small);
     }
   }
 }
@@ -999,14 +958,14 @@ fill: var(--active-tomato);
   place-self: center;
   justify-content: center;
   text-decoration: none;
-  color: var(--text-color-light);
+  color: var(--nav-neutral);
 
   svg {
     width: 20px;
     height: auto;
 
     path {
-      fill: var(--text-color-light);
+      fill: var(--nav-neutral);
     }
   }
 }
@@ -1026,7 +985,7 @@ fill: var(--active-tomato);
   }
 
   h2 {
-  font-family: var(--reg-font);
+  font-family: var(--font-family);
   }
 }
 
