@@ -609,7 +609,7 @@ footer {
     background-color: var(--white) ;
     border-radius:25px;
     color: var(--text-color-light);
-    transition: all 1s ease;
+    transition: right .5s;
     cursor: pointer;
    
 
