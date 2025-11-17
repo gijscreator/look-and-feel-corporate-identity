@@ -11,7 +11,8 @@
 
 html {
   background-color: var(--white);
-  color: var(--nav-neutral)
+  color: var(--nav-neutral);
+  font-size: var(--font-size-small)
   
 }
 
@@ -36,6 +37,7 @@ li {
 
 a {
   text-decoration: none;
+  font-size: var(--font-size-small)
 }
 
 img {
@@ -114,6 +116,7 @@ header  {
     align-items: center;
     justify-content: center;
   }
+
   .grid-view-header {
     justify-content: flex-end;
   }
@@ -122,7 +125,7 @@ header  {
     justify-content: flex-start;
 
     svg {
-      width: 2rem;
+      width: var(--svg-big);
       height: auto;
     }
   }
@@ -138,7 +141,7 @@ header  {
   }
 
   svg {
-    width: 1.5rem;
+    width: var(--svg-medium);
     height: auto;
   }
 
@@ -146,6 +149,7 @@ header  {
   h4 {
     display: flex;
     color: var(--white);
+    font-size: var(--font-size-large);
   }
 
   .header-text-icon {
@@ -227,6 +231,7 @@ header  {
     list-style: none; 
     display: flex;
     align-items: center;
+    font-size: var(--font-size-medium)
   }
 
   summary::marker {
@@ -261,7 +266,7 @@ header  {
     }
 
     &::placeholder {
-      font-size: .8rem;
+      font-size: var(--font-size-small);
       padding-left: 10%;
       color: var(--white);
     }
@@ -292,7 +297,7 @@ header  {
     margin: 0px 0px 20px 20px;
 
     svg {
-      width: var(--icon-width);
+      width: var(--svg-medium);
       height: auto;
     }
 
@@ -306,7 +311,7 @@ header  {
     gap: 20px;
 
     figcaption {
-      font-size: 1rem;
+      font-size: var(--font-size-paragraph);
     }
   }
 }
@@ -380,7 +385,7 @@ ul.images-list {
 
       p {   
         color: var(--nav-neutral);
-        font-size: 1.1rem;
+        font-size: var(--font-size-small);
       }
     }
     
@@ -395,8 +400,8 @@ ul.images-list {
       align-items: center;
 
       svg {
-        width: 25px;
-        height: 25px;
+        width: var(--svg-medium);
+        height: auto;
       }
     }
 
@@ -444,8 +449,8 @@ footer {
         }
 
         a>svg {
-          width: 1.5rem;
-          height: 25px;
+          width:  var(--svg-medium);
+          height: auto;
           aspect-ratio: 1/1;
         }
 
@@ -455,7 +460,7 @@ footer {
         
         p {
           color: var(--white);
-          font-size: .9rem;
+          font-size: var(--font-size-paragraph);
           text-align: center;
         }
       }
@@ -473,11 +478,15 @@ footer {
     display: flex;
     flex-direction: column;
     padding: 20px 0px;
+
+    h2 {
+      font-size: var(--font-size-large)
+    }
   }
 
   figure:nth-of-type(1) {
     display: flex;
-    gap: 20px;
+    gap: 1rem;
   }
 
   label {
@@ -495,7 +504,7 @@ footer {
     height: 6vh;
 
     &::placeholder {
-      font-size: .8rem;
+      font-size: var(--font-size-paragraph);
       padding-left: 10%;
       color: var(--text-color-light);
     }
@@ -530,7 +539,7 @@ footer {
     }
 
     svg {
-      width: 25px;
+      width: var(--svg-medium);
       height: auto;
 
       path {
@@ -562,7 +571,7 @@ footer {
     gap: 20px;
     
     svg {
-      width: 20px;
+      width: var(--svg-small);
       height: auto;
       
       path {
@@ -710,7 +719,7 @@ fill: var(--active-tomato);
   
   p {
     color: var(--text-color-dark);
-    font-size: 1.4rem;
+    font-size: var(--font-size-medium);
     font-weight: 600;
   }
 }
@@ -735,16 +744,16 @@ fill: var(--active-tomato);
     justify-content: space-between;
     width: 100%;
     border-bottom: solid var(--nav-neutral) 2px;
-    padding: 10px;
+    padding: 0.5rem;
     gap: 2vw;
 
-    svg path {   
-      fill: var(--nav-neutral);
-    }
-
     svg {
-      width: var(--svg-feedback);
+      width: var(--svg-medium);
       height: auto;
+
+      path {   
+        fill: var(--nav-neutral);
+      }
     }
 
     .snappthis-logo {
@@ -757,12 +766,12 @@ fill: var(--active-tomato);
       
       h4 {
         color:var(--nav-neutral);
-        font-size: 1.5rem;
+        font-size: var(--font-size-medium);
       }
 
       p {
         color:var(--nav-neutral);
-        font-size: 1.2rem;
+        font-size: var(--font-size-paragraph);
       }
       .active {
         background-color: var(--nav-neutral);
@@ -821,7 +830,7 @@ fill: var(--active-tomato);
   
   p {
     color: var(--white);
-    font-size: 1rem;
+    font-size: var(--font-size-paragraph);
     font-weight: 600;
     text-align: center;
   }
@@ -882,11 +891,11 @@ fill: var(--active-tomato);
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: var(--font-size-small);
     }
 
     svg { 
-      width: 30px;
+      width: var(--svg-big);
       height: auto;
     }
 
