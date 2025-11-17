@@ -543,7 +543,7 @@ footer {
       height: auto;
 
       path {
-        fill: var(--text-color-dark)
+        fill: var(--white)
       }
     }
 
@@ -600,25 +600,41 @@ footer {
   .like-section {
     position: absolute;
     top: 50%;
-    right: 3vw;
+    right: 5vw;
     transform: translate(10%, -50%);
+    width: 10vw;
     display: flex;
     flex-direction: column;
     gap: 3vh;
     padding: 1rem;
-    background-color: var(--background-main) ;
+    background-color: var(--white) ;
     border-radius:25px;
     color: var(--text-color-light);
+    transition: right 1s ease;
+    cursor: pointer;
 
       svg {
         width: var(--svg-nav);
         height: auto;
 
         path {
-          fill: var(--background-sticky-elements)
+          fill: var(--nav-neutral)
         }
       }
+    }
+
+  .like-section.open {
+    right: -8vw;
   }
+
+  .absolute-test {
+    position: absolute;
+    right: 11vw;
+    top: 50%;
+    background-color: white;
+    transform: translate(10%, -50%);
+  }
+
 
   figure {
     display: flex;
@@ -720,7 +736,6 @@ fill: var(--active-tomato);
   p {
     color: var(--text-color-dark);
     font-size: var(--font-size-medium);
-    font-weight: 600;
   }
 }
 
@@ -831,7 +846,6 @@ fill: var(--active-tomato);
   p {
     color: var(--white);
     font-size: var(--font-size-paragraph);
-    font-weight: 600;
     text-align: center;
   }
 }

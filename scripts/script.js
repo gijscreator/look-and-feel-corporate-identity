@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // All our picture info
+  // All images in an array + info
   const pictures = [
     { src: "assets/handgeschaaft.jpg", alt: "Handgeschaaft", name: "Anna van Veen", place: "Amsterdam Oost", snappmap: "Mooi"},
     { src: "assets/autofiat.jpg", alt: "Auto Fiat", name: "Bram de Groot", place: "Rotterdam Centrum", snappmap: "Mooi" },
@@ -12,6 +12,15 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   // ------------------------------------------------
+
+  // Like tab with slideout
+  const likee = document.querySelector(".like-section");
+  
+  likee.addEventListener("click", () => {
+    likee.classList.toggle("open");
+  });
+
+
 
   // Get elements from DOM
   const button = document.querySelector(".grid-list-toggle");
@@ -93,6 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = `detailpagina.html?i=${item.dataset.index}`;
   });
 
+
   // When you click the toggle button, switch grid <-> list
   if (button) {
     button.addEventListener("click", () => {
@@ -111,3 +121,6 @@ if (cameraInput) {
     if (file) console.log("You took a picture!", file);
   });
 }
+
+
+
