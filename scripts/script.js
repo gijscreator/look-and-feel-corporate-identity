@@ -11,16 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
     { src: "assets/stoplicht.jpg", alt: "Stoplicht", name: "Hugo Peters", place: "Groningen", snappmap: "Mooi" }
   ];
 
-  // ------------------------------------------------
-
-  // Like tab with slideout
-  const likee = document.querySelector(".like-section");
-  
-  likee.addEventListener("click", () => {
-    likee.classList.toggle("open");
-  });
-
-
 
   // Get elements from DOM
   const button = document.querySelector(".grid-list-toggle");
@@ -121,6 +111,13 @@ if (cameraInput) {
     if (file) console.log("You took a picture!", file);
   });
 }
+
+  // Like tab with slideout
+  const likee = document.querySelector(".like-section");
+  
+  likee.addEventListener("click", () => {
+    likee.classList.toggle("open");
+  });
 
 
 

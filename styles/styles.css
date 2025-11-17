@@ -602,7 +602,6 @@ footer {
     top: 50%;
     right: 5vw;
     transform: translate(10%, -50%);
-    width: 10vw;
     display: flex;
     flex-direction: column;
     gap: 3vh;
@@ -610,8 +609,9 @@ footer {
     background-color: var(--white) ;
     border-radius:25px;
     color: var(--text-color-light);
-    transition: right 1s ease;
+    transition: all 1s ease;
     cursor: pointer;
+   
 
       svg {
         width: var(--svg-nav);
@@ -624,15 +624,22 @@ footer {
     }
 
   .like-section.open {
-    right: -8vw;
-  }
+    right: -3vw;
 
-  .absolute-test {
-    position: absolute;
-    right: 11vw;
-    top: 50%;
-    background-color: white;
-    transform: translate(10%, -50%);
+    li:not(.tab-text) {
+      display: none;
+    }
+
+  .tab-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+  .tab-text {
+    display: none;
+    writing-mode: vertical-rl;
   }
 
 
