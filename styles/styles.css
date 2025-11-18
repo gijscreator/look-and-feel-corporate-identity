@@ -624,7 +624,9 @@ footer {
     }
 
   .like-section.open {
-    right: -3vw;
+    width: 1rem;
+    right: .1rem;
+    border-radius: 1rem 0rem 0rem 1rem;
 
     li:not(.tab-text) {
       display: none;
