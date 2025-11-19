@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { src: "assets/bikerental.jpg", alt: "Bike rental", name: "Clara Meijer", place: "Utrecht Zuid", snappmap: "Mooi" },
     { src: "assets/fietaanpaal.jpg", alt: "Fiets aan paal", name: "Daan Visser", place: "Den Haag", snappmap: "Mooi" },
     { src: "assets/fietsbijtrap.jpg", alt: "Fiets bij trap", name: "Eva Janssen", place: "Leiden", snappmap: "Mooi" },
-    { src: "assets/fietsbord.jpg", alt: "Fietsbord", name: "Finn Bakker", place: "Haarlem", snappmap: "Mooi" },
+    { src: "assets/fietsbord.jpg", alt: "Fietsbord", name: "@Finn Bakker", place: "#Haarlem", snappmap: "#Mooi" },
     { src: "assets/onibus.jpg", alt: "Bus", name: "Gwen Vos", place: "Eindhoven", snappmap: "Mooi" },
     { src: "assets/stoplicht.jpg", alt: "Stoplicht", name: "Hugo Peters", place: "Groningen", snappmap: "Mooi" }
   ];
