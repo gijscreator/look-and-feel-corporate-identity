@@ -1060,8 +1060,13 @@ fill: var(--active-tomato);
       width: 33vw;
       height: 33vw;
       border-radius: 50%;
-      background-color: var(--active-svg);
+      background-color: var(--accent-neutral);
       border: none;
+      cursor: pointer;
+
+      input {
+        display:none;
+      }
     }
 
     svg {
