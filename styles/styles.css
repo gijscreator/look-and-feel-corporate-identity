@@ -494,24 +494,39 @@ footer {
   }
 
   input {
+    display: flex;
+    justify-content: center;
     margin: 0 auto;
-    background-color: var(--background-main);
-    color: var(--text-color-light);
+    color: var(--font-color-dark);
+    font-size: var(--paragraph);
     width: 80vw;
     max-width: 80vw;
     border-radius: 20px;
     min-height: 20px;
     height: 6vh;
+    color: black;
+    caret-color: var(--nav-neutral);
+    transition: all 1s ease;
+    border: 2px solid var(--nav-neutral);
 
     &::placeholder {
       font-size: var(--font-size-paragraph);
       padding-left: 10%;
-      color: var(--text-color-light);
+      color: var(--font-color-dark);
     }
 
     &::-webkit-textfield-decoration-container {
       padding-left: 10%;
     }
+
+    &:focus {
+      border: 2px solid var(--nav-neutral);
+      border-radius: 0rem;
+      outline: none;
+    }
+
+
+
   }
 }
 
@@ -669,11 +684,8 @@ footer {
     }
 
     p {
-      font-size: var(--font-size-body);
-      border-radius: var(--border-radius);
-      background-color: var(--active-link);
-      padding: 10px 20px;
-      color: var(--text-color-dark)
+      font-size: var(--font-size-paragraph);
+      text-decoration: underline;
     }
   }
 
@@ -681,32 +693,40 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
 
+    .more-location-header {
+      justify-content: space-between;
+    }
+    
     .more-location {
-      
-      flex-direction: column;
-      background-color: var(--background-sticky-elements);
-      color: var(--text-color-dark);
-      width: 90vw;
-      padding: 0px 5vw 5vw 5vw;
+      background-color: var(--nav-neutral);
+      color: var(--font-color-light);
+      width: 100vw;
+      margin-top:1rem;
+      padding: 5vw;
 
 
       h3 {
         color: var(--text-color-light);
-        background-color: var(--background-main);
-        width: 60vw;
-        height: 5vh;
-        border-radius: 0px 0px 20px 20px;
-        text-align: center;
       }
 
       a { 
         color: var(--text-color-dark);
       }
 
-      ul {
-        flex-direction: row;
+      .image-array {
+        display: flex;
+        justify-content: space-between;
+
+        li {
+          width: 17vw;
+          height: auto;
+
+          img {
+            width: 17vw;
+            height: auto;
+          }
+        }
       }
     }
   }
