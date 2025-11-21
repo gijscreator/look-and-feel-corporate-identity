@@ -1,14 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Helper function to get correct asset path based on current location
+    const getAssetPath = (assetPath) => {
+      // Remove leading slash if present
+      const cleanPath = assetPath.startsWith("/") ? assetPath.slice(1) : assetPath;
+      // Detect if we're in a subdirectory
+      const isInSubdir = window.location.pathname.includes("/pages/");
+      return isInSubdir ? `../${cleanPath}` : cleanPath;
+    };
+
     // All images in an array + info
     const pictures = [
-      { src: "/assets/handgeschaaft.jpg", alt: "Handgeschaaft", name: "Anna van Veen", place: "Amsterdam Oost", snappmap: "Mooi"},
-      { src: "/assets/autofiat.jpg", alt: "Auto Fiat", name: "Bram de Groot", place: "Rotterdam Centrum", snappmap: "Mooi" },
-      { src: "/assets/bikerental.jpg", alt: "Bike rental", name: "Clara Meijer", place: "Utrecht Zuid", snappmap: "Mooi" },
-      { src: "/assets/fietaanpaal.jpg", alt: "Fiets aan paal", name: "Daan Visser", place: "Den Haag", snappmap: "Mooi" },
-      { src: "/assets/fietsbijtrap.jpg", alt: "Fiets bij trap", name: "Eva Janssen", place: "Leiden", snappmap: "Mooi" },
-      { src: "/assets/fietsbord.jpg", alt: "Fietsbord", name: "@Finn Bakker", place: "#Haarlem", snappmap: "#Mooi" },
-      { src: "/assets/onibus.jpg", alt: "Bus", name: "Gwen Vos", place: "Eindhoven", snappmap: "Mooi" },
-      { src: "/assets/stoplicht.jpg", alt: "Stoplicht", name: "Hugo Peters", place: "Groningen", snappmap: "Mooi" }
+      { src: getAssetPath("assets/handgeschaaft.jpg"), alt: "Handgeschaaft", name: "Anna van Veen", place: "Amsterdam Oost", snappmap: "Mooi"},
+      { src: getAssetPath("assets/autofiat.jpg"), alt: "Auto Fiat", name: "Bram de Groot", place: "Rotterdam Centrum", snappmap: "Mooi" },
+      { src: getAssetPath("assets/bikerental.jpg"), alt: "Bike rental", name: "Clara Meijer", place: "Utrecht Zuid", snappmap: "Mooi" },
+      { src: getAssetPath("assets/fietaanpaal.jpg"), alt: "Fiets aan paal", name: "Daan Visser", place: "Den Haag", snappmap: "Mooi" },
+      { src: getAssetPath("assets/fietsbijtrap.jpg"), alt: "Fiets bij trap", name: "Eva Janssen", place: "Leiden", snappmap: "Mooi" },
+      { src: getAssetPath("assets/fietsbord.jpg"), alt: "Fietsbord", name: "@Finn Bakker", place: "#Haarlem", snappmap: "#Mooi" },
+      { src: getAssetPath("assets/onibus.jpg"), alt: "Bus", name: "Gwen Vos", place: "Eindhoven", snappmap: "Mooi" },
+      { src: getAssetPath("assets/stoplicht.jpg"), alt: "Stoplicht", name: "Hugo Peters", place: "Groningen", snappmap: "Mooi" }
     ];
   
   
@@ -127,9 +136,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Like tab with slideout
     const likee = document.querySelector(".like-section");
     
-    likee.addEventListener("click", () => {
-      likee.classList.toggle("open");
-    });
+    if (likee) {
+      likee.addEventListener("click", () => {
+        likee.classList.toggle("open");
+      });
+    }
   
     const thumbnails = document.querySelectorAll(".image-array img");
   
