@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
   gallery.addEventListener("click", event => {
     const item = event.target.closest("li");
     if (!item) return;
-    window.location.href = `detailpagina.html?i=${item.dataset.index}`;
+    window.location.href = `../pages/detailpagina.html?i=${item.dataset.index}`;
   });
 
 
