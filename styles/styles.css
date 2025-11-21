@@ -697,6 +697,7 @@ footer {
     align-items: center;
 
     .more-location-header {
+      display: flex;
       justify-content: space-between;
 
       h3 {
@@ -722,21 +723,24 @@ footer {
     }
 
     .more-location {
-      background-color: var(--nav-neutral);
-      color: var(--font-color-light);
+      background-color: var(--primary-bg-lightest);
+      color: var(--font-color-dark);
       width: 100vw;
       margin-top:1rem;
       padding: 0vw 5vw 2vw 5vw;
 
+      figure {
+        background-color: transparent;
+      }
 
       h3 {
-        color: var(--text-color-light);
+        color: var(--font-color-dark);
       }
 
       a { 
-        color: var(--text-color-dark);
+        color: var(--font-color-dark);
       }
-
+      
       .location-array, .person-array {
         display: flex;
         justify-content: space-between;
