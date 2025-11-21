@@ -20,7 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const placeText = document.getElementById("detail-location");
   const SnappmapText = document.getElementById("detail-snappmap");
   const onDetailPage = bigImage && nameText && placeText;
-  const thumbnails = document.querySelectorAll(".image-array img");
+  const thumbnailsLoca = document.querySelectorAll(".location-array img");
+  const thumbnailsPerson = document.querySelectorAll(".person-array img");
 
   if (onDetailPage) {
     // Find out which picture to show
@@ -41,8 +42,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     pictures.slice(0, 5).forEach((pic, index) => {
-        thumbnails[index].src = pic.src;
-        thumbnails[index].alt = pic.alt;
+        thumbnailsPerson[index].src = pic.src;
+        thumbnailsPerson[index].alt = pic.alt;
+        thumbnailsLoca[index].src = pic.src;
+        thumbnailsLoca[index].alt = pic.alt;
+        
     });
 
     // ✅ Add like/dislike/favorite here so it runs on the detail page

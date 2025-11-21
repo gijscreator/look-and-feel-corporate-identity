@@ -691,6 +691,7 @@ footer {
 
   .more-from {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -724,7 +725,7 @@ footer {
       color: var(--font-color-light);
       width: 100vw;
       margin-top:1rem;
-      padding: 5vw;
+      padding: 0vw 5vw 2vw 5vw;
 
 
       h3 {
@@ -735,7 +736,7 @@ footer {
         color: var(--text-color-dark);
       }
 
-      .image-array {
+      .location-array, .person-array {
         display: flex;
         justify-content: space-between;
 
