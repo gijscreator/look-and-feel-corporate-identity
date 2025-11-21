@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   // All images in an array + info
   const pictures = [
-    { src: "assets/handgeschaaft.jpg", alt: "Handgeschaaft", name: "Anna van Veen", place: "Amsterdam Oost", snappmap: "Mooi"},
-    { src: "assets/autofiat.jpg", alt: "Auto Fiat", name: "Bram de Groot", place: "Rotterdam Centrum", snappmap: "Mooi" },
-    { src: "assets/bikerental.jpg", alt: "Bike rental", name: "Clara Meijer", place: "Utrecht Zuid", snappmap: "Mooi" },
-    { src: "assets/fietaanpaal.jpg", alt: "Fiets aan paal", name: "Daan Visser", place: "Den Haag", snappmap: "Mooi" },
-    { src: "assets/fietsbijtrap.jpg", alt: "Fiets bij trap", name: "Eva Janssen", place: "Leiden", snappmap: "Mooi" },
-    { src: "assets/fietsbord.jpg", alt: "Fietsbord", name: "@Finn Bakker", place: "#Haarlem", snappmap: "#Mooi" },
-    { src: "assets/onibus.jpg", alt: "Bus", name: "Gwen Vos", place: "Eindhoven", snappmap: "Mooi" },
-    { src: "assets/stoplicht.jpg", alt: "Stoplicht", name: "Hugo Peters", place: "Groningen", snappmap: "Mooi" }
+    { src: "../assets/handgeschaaft.jpg", alt: "Handgeschaaft", name: "Anna van Veen", place: "Amsterdam Oost", snappmap: "Mooi"},
+    { src: "../assets/autofiat.jpg", alt: "Auto Fiat", name: "Bram de Groot", place: "Rotterdam Centrum", snappmap: "Mooi" },
+    { src: "../assets/bikerental.jpg", alt: "Bike rental", name: "Clara Meijer", place: "Utrecht Zuid", snappmap: "Mooi" },
+    { src: "../assets/fietaanpaal.jpg", alt: "Fiets aan paal", name: "Daan Visser", place: "Den Haag", snappmap: "Mooi" },
+    { src: "../assets/fietsbijtrap.jpg", alt: "Fiets bij trap", name: "Eva Janssen", place: "Leiden", snappmap: "Mooi" },
+    { src: "../assets/fietsbord.jpg", alt: "Fietsbord", name: "@Finn Bakker", place: "#Haarlem", snappmap: "#Mooi" },
+    { src: "../assets/onibus.jpg", alt: "Bus", name: "Gwen Vos", place: "Eindhoven", snappmap: "Mooi" },
+    { src: "../assets/stoplicht.jpg", alt: "Stoplicht", name: "Hugo Peters", place: "Groningen", snappmap: "Mooi" }
   ];
 
 
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
   gallery.addEventListener("click", event => {
     const item = event.target.closest("li");
     if (!item) return;
-    window.location.href = ` pages/detailpagina.html?i=${item.dataset.index}`;
+    window.location.href = `../pages/detailpagina.html?i=${item.dataset.index}`;
   });
 
 
