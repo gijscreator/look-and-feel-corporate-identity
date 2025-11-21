@@ -696,8 +696,29 @@ footer {
 
     .more-location-header {
       justify-content: space-between;
+
+      h3 {
+        font-size: var(--font-size-small);
+      }
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: var(--font-size-small);
+        gap: .45rem;
+      }
+      
+      svg {
+        width: var(--svg-small);
+        height: auto;
+
+        @media (min-width: 798px) {
+          display: none;
+        }
+      }
     }
-    
+
     .more-location {
       background-color: var(--nav-neutral);
       color: var(--font-color-light);

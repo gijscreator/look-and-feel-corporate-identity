@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const placeText = document.getElementById("detail-location");
   const SnappmapText = document.getElementById("detail-snappmap");
   const onDetailPage = bigImage && nameText && placeText;
+  const thumbnails = document.querySelectorAll(".image-array img");
 
   if (onDetailPage) {
     // Find out which picture to show
@@ -38,6 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const spot = document.querySelector(".detail-card") || document.querySelector("figure");
       if (spot) spot.insertAdjacentHTML("beforeend", "<p>Sorry, picture not found.</p>");
     }
+
+    pictures.slice(0, 5).forEach((pic, index) => {
+        thumbnails[index].src = pic.src;
+        thumbnails[index].alt = pic.alt;
+    });
 
     // ✅ Add like/dislike/favorite here so it runs on the detail page
     const likeBtn = document.querySelector(".like-button");
@@ -118,6 +124,9 @@ if (cameraInput) {
   likee.addEventListener("click", () => {
     likee.classList.toggle("open");
   });
+
+  const thumbnails = document.querySelectorAll(".image-array img");
+
 
 
 
