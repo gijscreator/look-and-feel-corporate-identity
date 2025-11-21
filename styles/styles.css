@@ -537,35 +537,11 @@ footer {
 .details-header {
 
   nav {
+    display: flex;
+    justify-content: space-between;
+    width: 90vw;
 
-    ul {
-      grid-template-columns: 1fr auto 1fr;
-      width: 100%;
-      width: 90vw;
-    }
     
-    ul.like-tomato-star {
-      display: flex;
-      justify-content: space-between;
-      width: 40vw;
-      align-items: center;
-      gap: 20px;
-      
-    }
-
-    svg {
-      width: var(--svg-medium);
-      height: auto;
-
-      path {
-        fill: var(--white)
-      }
-    }
-
-    li.back-button {
-      display: flex;
-      justify-content: flex-start;
-    }
   }
 }
 
@@ -740,7 +716,7 @@ footer {
       a { 
         color: var(--font-color-dark);
       }
-      
+
       .location-array, .person-array {
         display: flex;
         justify-content: space-between;
