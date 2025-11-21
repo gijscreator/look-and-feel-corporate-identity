@@ -1,11 +1,11 @@
 /* font family van de opdrachtgever */ 
   @font-face {
     font-family: 'Bariol';
-      src: url('../assets/Bariol_Bold.otf') format('opentype');
+      src: url('../../assets/Bariol_Bold.otf') format('opentype');
   }
     @font-face {
     font-family: 'Bariol-reg';
-      src: url('../assets/Bariol_Regular.otf') format('opentype');
+      src: url('../../assets/Bariol_Regular.otf') format('opentype');
   }
 
 :root {
