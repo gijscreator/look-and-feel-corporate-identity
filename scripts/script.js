@@ -99,7 +99,10 @@ document.addEventListener("DOMContentLoaded", () => {
       <li data-index="${i}">
         <figure>
           <img src="${pic.src}" alt="${pic.alt}" loading="lazy">
-          <article><p>${pic.name}</p><p>${pic.place}</p></article>
+          <article>
+            <p>${pic.name}</p>
+            <p>${pic.place}</p>
+          </article>
         </figure>
       </li>
     `).join("");

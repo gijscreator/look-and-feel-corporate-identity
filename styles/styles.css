@@ -101,6 +101,10 @@ header  {
     display: flex;
     width: 90vw;
     justify-content: space-between;
+
+    @media (min-width: 789px) {
+      width: 100%;
+    }
   }
 
   /* oplossing voor het niet centreren van de details element (playful) */
@@ -155,7 +159,7 @@ header  {
   .header-text-icon {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.5rem;
   }
 
   
@@ -172,7 +176,7 @@ header  {
     flex-direction: column;
     background-color: var(--nav-neutral);
     padding: 1rem;
-    gap: 10px;
+    gap: 1rem;
     justify-content: left;
     cursor: pointer;
     
@@ -187,7 +191,7 @@ header  {
     li > button {
       display: flex;
       align-content: center;
-      gap: 10px;
+      gap: 0.5rem;
     }
 
     button {
@@ -293,7 +297,7 @@ header  {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 10px;
+    gap: 0.5rem;
     margin: 0px 0px 20px 20px;
 
     svg {
@@ -347,10 +351,9 @@ header  {
 ul.images-list {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 10px;
+  gap: .5rem;
   width: 100vw;
   margin: 0 auto;
-  margin-bottom: 10vh;
   align-items: start;
 
   @media (min-width: 598px) {
@@ -381,7 +384,7 @@ ul.images-list {
     article {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 0.5rem;
 
       p {   
         color: var(--nav-neutral);
@@ -411,6 +414,32 @@ ul.images-list {
   
     h4 {
       color: var(--nav-neutral);
+    }
+  }
+}
+
+.heading-snappmaps {
+  margin: 1rem .5rem;
+}
+
+.your-snappmaps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+ 
+  li {
+     display: flex;
+     background-color: var(--primary-bg-lightest);
+     gap: 1rem;
+     align-items: center;
+
+    img {
+      width: 20vw;
+      height: 100%;                               
+    }
+
+    h3 {
+      font-size: var(--font-size-medium);
     }
   }
 }
@@ -932,7 +961,7 @@ fill: var(--active-tomato);
       align-items: center;
       justify-content: center;
       width: 100%;
-      gap: 10px;
+      gap: 0.5rem;
       text-align: center;
     }
 
@@ -1105,7 +1134,7 @@ fill: var(--active-tomato);
   .group-top {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.5rem;
   }
 
   svg:not(.capture) {
