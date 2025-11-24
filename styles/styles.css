@@ -104,6 +104,7 @@ header  {
 
     @media (min-width: 789px) {
       width: 100%;
+      font-size: var(--font-size-small);
     }
   }
 
@@ -113,6 +114,18 @@ header  {
   .snappmap-list-header,
   .grid-view-header {
     flex: 1;
+
+    @media (min-width: 789px) {
+      flex: unset;
+    }
+  }
+
+  .snappmap-list-header {
+    display: flex;
+
+    @media (min-width: 789px) {
+      display: none;
+    }
   }
 
   li {
@@ -153,7 +166,6 @@ header  {
   h4 {
     display: flex;
     color: var(--white);
-    font-size: var(--font-size-large);
   }
 
   .header-text-icon {
