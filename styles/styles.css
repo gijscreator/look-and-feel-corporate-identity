@@ -435,15 +435,29 @@ ul.images-list {
 }
 
 .your-snappmaps {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: .5rem;
+  width: 100vw;
+  margin: 0 auto;
+  align-items: start;
+
+  @media (min-width: 598px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (min-width: 1000px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    
+  }
  
   li {
-     display: flex;
-     background-color: var(--primary-bg-lightest);
-     gap: 1rem;
-     align-items: center;
+
+    display: grid;               
+    grid-template-columns: 25vw 1fr;        
+    align-items: center;
+    background: var(--primary-bg-lightest);
+    height: 10vh;
 
     img {
       width: 20vw;
