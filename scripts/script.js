@@ -96,26 +96,19 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // Show all the little pictures
     gallery.innerHTML = pictures.map((pic, i) => `
-      <li data-index="${i}">
-        <figure>
-          <img src="${pic.src}" alt="${pic.alt}" loading="lazy">
-          <article>
-            <p>${pic.name}</p>
-            <p>${pic.place}</p>
-          </article>
-        </figure>
+      <li>
+        <a href="../pages/detailpagina.html?i=${i}">
+          <figure>
+            <img src="${pic.src}" alt="${pic.alt}" loading="lazy">
+            <article>
+              <p>${pic.name}</p>
+              <p>${pic.place}</p>
+            </article>
+          </figure>
+        </a>
       </li>
     `).join("");
-  
-    // When you click a little picture, go to the detail page
-    gallery.addEventListener("click", event => {
-      const item = event.target.closest("li");
-      if (!item) return;
-      // Detect if we're in a subdirectory or at root
-      const pathPrefix = window.location.pathname.includes("/pages/") ? "../pages/" : "pages/";
-      window.location.href = `${pathPrefix}detailpagina.html?i=${item.dataset.index}`;
-    });
-  
+
   
     // When you click the toggle button, switch grid <-> list
     if (button) {

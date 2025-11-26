@@ -37,7 +37,8 @@ li {
 
 a {
   text-decoration: none;
-  font-size: var(--font-size-small)
+  font-size: var(--font-size-small);
+  cursor: pointer;
 }
 
 img {
@@ -377,7 +378,7 @@ ul.images-list {
     
   }
   
-  li > figure {
+  li > a > figure {
     display: grid;               
     grid-template-columns: 39vw 1fr;        
     column-gap: 16px;
