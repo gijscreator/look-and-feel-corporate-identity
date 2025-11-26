@@ -1128,6 +1128,10 @@ fill: var(--active-tomato);
 
 .snappmap {
 
+  .images {
+    margin-top: 7rem;
+  }
+
   .capture-wrapper {
     display: flex;
     gap: 20px;
@@ -1142,7 +1146,7 @@ fill: var(--active-tomato);
       background-color: var(--accent-neutral);
       border: none;
       cursor: pointer;
-      transition: all .2s ease-in-out;
+      transition: all .5s linear;
 
       input {
         display:none;
