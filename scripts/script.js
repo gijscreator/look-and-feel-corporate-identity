@@ -134,19 +134,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-    const sentinel = document.getElementById("captureSentinel");
+    const captureBtn = document.getElementById("captureBtn");
+    if (!captureBtn) return;
 
-    if (!captureBtn || !sentinel) return;
-
-    const observer = new IntersectionObserver(
-        ([entry]) => {
-            captureBtn.classList.toggle("sticky", !entry.isIntersecting);
-        },
-        { threshold: 0 }
-    );
-
-    observer.observe(sentinel);
-  });
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 0) {
+            captureBtn.classList.add("sticky");
+        } else {
+            captureBtn.classList.remove("sticky");
+        }
+    });
+});
 
 
 // ===========================================================
