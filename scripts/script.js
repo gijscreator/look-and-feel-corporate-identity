@@ -135,10 +135,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
     const captureBtn = document.getElementById("captureBtn");
+    const marginBtm = document.getElementById("images");
     if (!captureBtn) return;
 
     window.addEventListener("scroll", () => {
         captureBtn.classList.toggle("sticky", window.scrollY > 0);
+        marginBtm.classList.toggle("sticky", window.scrollY > 0);
     });
 });
 
