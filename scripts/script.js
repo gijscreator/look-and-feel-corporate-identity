@@ -25,6 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
     { src: getAssetPath("assets/fietsbijtrap.jpg"), alt: "Fiets bij trap", name: "Eva Janssen", place: "Leiden", snappmap: "Mooi" },
     { src: getAssetPath("assets/fietsbord.jpg"), alt: "Fietsbord", name: "@Finn Bakker", place: "#Haarlem", snappmap: "#Mooi" },
     { src: getAssetPath("assets/onibus.jpg"), alt: "Bus", name: "Gwen Vos", place: "Eindhoven", snappmap: "Mooi" },
+    { src: getAssetPath("assets/stoplicht.jpg"), alt: "Stoplicht", name: "Hugo Peters", place: "Groningen", snappmap: "Mooi" },
+    { src: getAssetPath("assets/stoplicht.jpg"), alt: "Stoplicht", name: "Hugo Peters", place: "Groningen", snappmap: "Mooi" },
+    { src: getAssetPath("assets/stoplicht.jpg"), alt: "Stoplicht", name: "Hugo Peters", place: "Groningen", snappmap: "Mooi" },
+    { src: getAssetPath("assets/stoplicht.jpg"), alt: "Stoplicht", name: "Hugo Peters", place: "Groningen", snappmap: "Mooi" },
     { src: getAssetPath("assets/stoplicht.jpg"), alt: "Stoplicht", name: "Hugo Peters", place: "Groningen", snappmap: "Mooi" }
   ];
 
