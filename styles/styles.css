@@ -510,7 +510,7 @@ footer {
         }
 
         svg.active > path {
-          fill: var(--accent-neutral);
+          fill: var(--accent-lightest);
         }
         
         p {
