@@ -1127,6 +1127,7 @@ fill: var(--active-tomato);
 /* ---------------------------------Snappmap-----------------------------------*/
 
 .snappmap {
+  margin-bottom: 200px;
 
   .capture-wrapper {
     display: flex;
@@ -1142,11 +1143,21 @@ fill: var(--active-tomato);
       background-color: var(--accent-neutral);
       border: none;
       cursor: pointer;
+      transition: all .5s ease-in-out;
 
       input {
         display:none;
       }
+
+      &.sticky {
+        position: fixed;
+        top: 7vh;
+        border-radius: 0;
+        width: 100vw;
+        height: 5rem;
+      }
     }
+
 
     svg {
       width: 13vw;
@@ -1191,3 +1202,4 @@ fill: var(--active-tomato);
     transform: scale(1.1);
   }
 }
+

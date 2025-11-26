@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   // ---------------------------
   //  Path Helper
   // ---------------------------
@@ -42,10 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const locationArray = document.querySelector(".location-array");
 
   const onDetailPage = bigImage && nameText && placeText;
-  // ============================================
-  //  DETAIL PAGE LOGIC
-  // ============================================
+
+  // ===========================================================
+  // DETAIL PAGE LOGIC
+  // ===========================================================
   if (onDetailPage) {
+
     const urlBits = new URLSearchParams(window.location.search);
     const index = parseInt(urlBits.get("i"));
     const chosenPic = pictures[index];
@@ -56,20 +59,12 @@ document.addEventListener("DOMContentLoaded", () => {
       nameText.textContent = chosenPic.name;
       snappmapText.textContent = chosenPic.snappmap;
       placeText.textContent = chosenPic.place;
-    } else {
-      bigImage.remove();
-      const spot = document.querySelector(".detail-card") || document.querySelector("figure");
-      if (spot) spot.insertAdjacentHTML("beforeend", "<p>Sorry, picture not found.</p>");
     }
 
-    // --------------------------------------------
-    // Thumbnails for "More from Person" & "More from Location"
-    // (wrapped in <a><figure><img></figure></a>)
-    // --------------------------------------------
     const makeThumbHTML = (pic, i) => `
       <li>
         <a href="${getPagePath(`detailpagina.html?i=${i}`)}">
-            <img src="${pic.src}" alt="${pic.alt}">
+          <img src="${pic.src}" alt="${pic.alt}">
         </a>
       </li>
     `;
@@ -82,9 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
       locationArray.innerHTML = pictures.slice(0, 5).map(makeThumbHTML).join("");
     }
 
-    // --------------------------------------------
-    // Like / Dislike / Favorite Buttons
-    // --------------------------------------------
     const likeBtn = document.querySelector(".like-button");
     const dislikeBtn = document.querySelector(".dislike-button");
     const favBtn = document.querySelector(".favorite-button");
@@ -109,41 +101,53 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    return; // Stop here (gallery code below should not run)
+  } 
+  // ===========================================================
+  // GALLERY PAGE LOGIC
+  // ===========================================================
+  else if (gallery) {
+    gallery.classList.add("images-grid");
+
+    gallery.innerHTML = pictures.map((pic, i) => `
+      <li>
+        <a href="${getPagePath(`detailpagina.html?i=${i}`)}">
+          <figure>
+            <img src="${pic.src}" alt="${pic.alt}" loading="lazy">
+            <article>
+              <p>${pic.name}</p>
+              <p>${pic.place}</p>
+            </article>
+          </figure>
+        </a>
+      </li>
+    `).join("");
+
+    if (button) {
+      button.addEventListener("click", () => {
+        gallery.classList.toggle("images-grid");
+        gallery.classList.toggle("images-list");
+      });
+    }
   }
 
-  // ============================================
-  //  GALLERY PAGE LOGIC
-  // ============================================
-  if (!gallery) return;
+    const sentinel = document.getElementById("captureSentinel");
 
-  gallery.classList.add("images-grid");
+    if (!captureBtn || !sentinel) return;
 
-  gallery.innerHTML = pictures.map((pic, i) => `
-    <li>
-      <a href="${getPagePath(`detailpagina.html?i=${i}`)}">
-        <figure>
-          <img src="${pic.src}" alt="${pic.alt}" loading="lazy">
-          <article>
-            <p>${pic.name}</p>
-            <p>${pic.place}</p>
-          </article>
-        </figure>
-      </a>
-    </li>
-  `).join("");
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            captureBtn.classList.toggle("sticky", !entry.isIntersecting);
+        },
+        { threshold: 0 }
+    );
 
-  if (button) {
-    button.addEventListener("click", () => {
-      gallery.classList.toggle("images-grid");
-      gallery.classList.toggle("images-list");
-    });
-  }
-});
+    observer.observe(sentinel);
+  });
 
-// ============================================
+
+// ===========================================================
 // CAMERA INPUT
-// ============================================
+// ===========================================================
 const cameraInput = document.getElementById("cameraInput");
 if (cameraInput) {
   cameraInput.addEventListener("change", event => {
@@ -152,9 +156,9 @@ if (cameraInput) {
   });
 }
 
-// ============================================
+// ===========================================================
 // LIKE TAB SLIDEOUT
-// ============================================
+// ===========================================================
 const likee = document.querySelector(".like-section");
 if (likee) {
   likee.addEventListener("click", () => {
@@ -162,38 +166,32 @@ if (likee) {
   });
 }
 
+// ===========================================================
+// COUNTDOWN TIMER
+// ===========================================================
 const clock = document.getElementById("countdown");
 
 window.onload = () => {
-    if (document.getElementById("countdown")) {
-        timer();
-    }
-}
+  if (clock) timer();
+};
 
 function timer() {
-    console.log("coutdown started")
-    let seconds = Math.floor(Math.random() * (21600 - 3600) + 3600);
-    setInterval(() => {
-        seconds--;
-        clock.textContent = timeFormat(seconds);
-    }, 1000);
+  console.log("countdown started");
+  let seconds = Math.floor(Math.random() * (21600 - 3600) + 3600);
+
+  setInterval(() => {
+    seconds--;
+    clock.textContent = timeFormat(seconds);
 
     if (seconds <= 0) {
-        clock.textContent = "je was op niks aan het wachten"
+      clock.textContent = "je was op niks aan het wachten";
     }
+  }, 1000);
 }
 
-
 function timeFormat(seconds) {
-    // uitrekenen hoeveel uren minuten en seconden er moeten zijn
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60)
-    const secs = seconds % 60;
-
-    // zorgen dat er een 0 voorkomt zodat 1:3:2 -> 01:03:02 word
-    const h = String(hours).padStart(2, "0");
-    const m = String(minutes).padStart(2, "0");
-    const s = String(secs).padStart(2, "0");
-
-    return `${h}:${m}:${s}`
+  const h = String(Math.floor(seconds / 3600)).padStart(2, "0");
+  const m = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
+  const s = String(seconds % 60).padStart(2, "0");
+  return `${h}:${m}:${s}`;
 }
