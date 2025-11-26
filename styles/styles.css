@@ -12,8 +12,7 @@
 html {
   background-color: var(--white);
   color: var(--nav-neutral);
-  font-size: var(--font-size-small)
-  
+  font-size: var(--font-size-small);
 }
 
 header, footer {
@@ -1208,5 +1207,3 @@ fill: var(--active-tomato);
     transform: scale(1.1);
   }
 }
-
-
