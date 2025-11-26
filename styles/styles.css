@@ -230,7 +230,7 @@ header  {
     display: flex;
     align-items: flex-start;
     position: fixed; 
-    top: 7vh; 
+    top: 5vh; 
     left: 0;
     width: 100vw;
   }
