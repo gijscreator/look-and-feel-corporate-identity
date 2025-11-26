@@ -230,15 +230,17 @@ header  {
     display: flex;
     align-items: flex-start;
     position: fixed; 
-    top: 5vh; 
+    top: 6vh; 
     left: 0;
     width: 100vw;
+    z-index: 200;
   }
 
   .snappmap-list-header details[open] > *:not(summary) {
     align-items: center;
     color: var(--white);
     background-color: var(--nav-neutral);
+    z-index: 200;
   }
 
   /* issue voor safari gefixt */
@@ -247,7 +249,8 @@ header  {
     list-style: none; 
     display: flex;
     align-items: center;
-    font-size: var(--font-size-medium)
+    font-size: var(--font-size-medium);
+    z-index: 200;
   }
 
   summary::marker {
@@ -1140,6 +1143,7 @@ fill: var(--active-tomato);
     align-items: center;
 
     .capture-button {
+      margin-top: 1rem;
       width: 73vw;
       height: 73vw;
       border-radius: 50%;
@@ -1147,7 +1151,7 @@ fill: var(--active-tomato);
       border: none;
       cursor: pointer;
       transition: all .5s linear;
-
+      
       input {
         display:none;
       }
@@ -1158,9 +1162,12 @@ fill: var(--active-tomato);
         border-radius: 0;
         opacity: 1;
         width: 100vw;
+        margin-top: 0rem;
         height: 5rem;
-        
+        z-index: 0;
+      
       }
+      
     }
 
 
