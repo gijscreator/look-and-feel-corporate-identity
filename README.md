@@ -18,9 +18,22 @@ SnappThis is een idee van Marije, oud-kunstacademie student en docent bij de HvA
 Haar doel is om te mensen inspireren door foto’s in groepen makkelijk te kunnen delen.
 
 
-De website is hier te vinden: https://gijscreator.github.io/the-client-website/home.html
+De website is hier te vinden: [https://gijscreator.github.io/the-client-website/home.html](https://gijscreator.github.io/look-and-feel-corporate-identity/)
 
 # Design 
+
+Het design is origineel aangeleverd door marije, hier heb ik een aantal aanpassingen aan gedaan om het haalbaar en accesable te maken.
+
+
+
+
+
+
+
+
+
+
+
 
 ## Mobiel design
 
