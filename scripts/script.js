@@ -138,13 +138,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!captureBtn) return;
 
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 0) {
-            captureBtn.classList.add("sticky");
-        } else {
-            captureBtn.classList.remove("sticky");
-        }
+        captureBtn.classList.toggle("sticky", window.scrollY > 0);
     });
 });
+
 
 
 // ===========================================================
