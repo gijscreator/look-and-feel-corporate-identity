@@ -1127,7 +1127,7 @@ fill: var(--active-tomato);
 /* ---------------------------------Snappmap-----------------------------------*/
 
 .snappmap {
-  margin-bottom: 200px;
+  margin-bottom: 2000px;
 
   .capture-wrapper {
     display: flex;
