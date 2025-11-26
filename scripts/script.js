@@ -70,9 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const makeThumbHTML = (pic, i) => `
       <li>
         <a href="${getPagePath(`detailpagina.html?i=${i}`)}">
-          <figure>
             <img src="${pic.src}" alt="${pic.alt}">
-          </figure>
         </a>
       </li>
     `;
